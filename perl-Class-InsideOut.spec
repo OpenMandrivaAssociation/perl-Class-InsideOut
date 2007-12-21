@@ -16,6 +16,7 @@ BuildRequires: perl(Scalar::Util)
 BuildRequires: perl(Test::More)
 BuildRequires: perl(base)
 BuildArch: noarch
+BuildRoot:	%{_tmppath}/%{name}-%{version}
 
 %description
 DISTDESCR

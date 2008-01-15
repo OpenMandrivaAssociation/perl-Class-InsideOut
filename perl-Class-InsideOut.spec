@@ -1,7 +1,7 @@
 %define module   Class-InsideOut
 
 Name:		perl-%{module}
-Version:    1.08
+Version:    1.09
 Release:    %mkrel 1
 License:	GPL or Artistic
 Group:		Development/Perl

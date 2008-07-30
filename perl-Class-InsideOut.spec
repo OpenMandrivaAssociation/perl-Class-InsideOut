@@ -2,7 +2,7 @@
 
 Name:		perl-%{module}
 Version:    1.09
-Release:    %mkrel 1
+Release:    %mkrel 3
 License:	GPL or Artistic
 Group:		Development/Perl
 Summary:    DISTSUMMARY

@@ -58,3 +58,39 @@ rm -rf %{buildroot}
 %doc Changes README LICENSE
 %{_mandir}/man3/*
 %{perl_vendorlib}/Class
+
+
+%changelog
+* Sat May 28 2011 Funda Wang <fwang@mandriva.org> 1.100.0-2mdv2011.0
++ Revision: 680822
+- mass rebuild
+
+* Tue Aug 25 2009 Jérôme Quelin <jquelin@mandriva.org> 1.100.0-1mdv2011.0
++ Revision: 421133
+- update to 1.10
+
+* Sat Aug 22 2009 Guillaume Rousse <guillomovitch@mandriva.org> 1.90.0-1mdv2010.0
++ Revision: 419636
+- new perl version macro
+- fix summary and description
+
+* Wed Jul 30 2008 Thierry Vignaud <tv@mandriva.org> 1.09-3mdv2009.0
++ Revision: 255988
+- rebuild
+
+* Tue Jan 15 2008 Guillaume Rousse <guillomovitch@mandriva.org> 1.09-1mdv2008.1
++ Revision: 152962
+- update to new version 1.09
+- update to new version 1.09
+
+  + Olivier Blin <oblin@mandriva.com>
+    - restore BuildRoot
+
+  + Thierry Vignaud <tv@mandriva.org>
+    - kill re-definition of %%buildroot on Pixel's request
+
+* Tue Nov 06 2007 Guillaume Rousse <guillomovitch@mandriva.org> 1.08-1mdv2008.1
++ Revision: 106602
+- import perl-Class-InsideOut
+
+

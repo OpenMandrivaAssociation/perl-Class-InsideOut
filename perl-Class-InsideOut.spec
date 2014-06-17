@@ -1,22 +1,38 @@
 %define upstream_name       Class-InsideOut
-%define upstream_version 1.10
+%define upstream_version 1.13
 
 Name:       perl-%{upstream_name}
 Version:    %perl_convert_version %{upstream_version}
-Release:    3
-License:	GPL or Artistic
-Group:		Development/Perl
+Release:    1
+License:    GPL or Artistic
+Group:      Development/Perl
 Summary:    A safe, simple inside-out object construction kit
-Url:		http://search.cpan.org/dist/%{upstream_name}
-Source:     http://www.cpan.org/modules/by-module/Config/%{upstream_name}-%{upstream_version}.tar.gz
-BuildRequires: perl-devel
+Url:        http://search.cpan.org/dist/%{upstream_name}
+Source0:    http://www.cpan.org/modules/by-module/Config/%{upstream_name}-%{upstream_version}.tar.gz
+
+BuildRequires: perl(Carp)
 BuildRequires: perl(Class::ISA)
 BuildRequires: perl(Config)
+BuildRequires: perl(DynaLoader)
 BuildRequires: perl(Exporter)
-BuildRequires: perl(Scalar::Util)
-BuildRequires: perl(Test::More)
-BuildRequires: perl(base)
-BuildArch: noarch
+BuildRequires: perl(ExtUtils::MakeMaker)
+BuildRequires: perl(File::Find)
+BuildRequires: perl(File::Spec)
+BuildRequires: perl(File::Spec::Functions)
+BuildRequires: perl(File::Temp)
+BuildRequires: perl(IO::File)
+BuildRequires: perl(List::Util)
+BuildRequires: perl(Scalar::Util) >= 1.90.0
+BuildRequires: perl(Storable)
+BuildRequires: perl(Test::More) >= 0.450.0
+BuildRequires: perl(XSLoader)
+BuildRequires: perl(overload)
+BuildRequires: perl(strict)
+BuildRequires: perl(threads)
+BuildRequires: perl(vars)
+BuildRequires: perl(warnings)
+BuildRequires: perl-devel
+BuildArch:  noarch
 
 %description
 This is a simple, safe and streamlined toolkit for building inside-out objects.
@@ -39,7 +55,7 @@ and generating flexible accessors.
 %setup -q -n %{upstream_name}-%{upstream_version} 
 
 %build
-%{__perl} Makefile.PL -n INSTALLDIRS=vendor
+perl Makefile.PL -n INSTALLDIRS=vendor
 %make
 
 %check
@@ -49,42 +65,7 @@ make test
 %makeinstall_std
 
 %files
-%doc Changes README LICENSE
+%doc CONTRIBUTING Changes LICENSE META.json META.yml MYMETA.yml README examples
 %{_mandir}/man3/*
 %{perl_vendorlib}/Class
-
-
-%changelog
-* Sat May 28 2011 Funda Wang <fwang@mandriva.org> 1.100.0-2mdv2011.0
-+ Revision: 680822
-- mass rebuild
-
-* Tue Aug 25 2009 Jérôme Quelin <jquelin@mandriva.org> 1.100.0-1mdv2011.0
-+ Revision: 421133
-- update to 1.10
-
-* Sat Aug 22 2009 Guillaume Rousse <guillomovitch@mandriva.org> 1.90.0-1mdv2010.0
-+ Revision: 419636
-- new perl version macro
-- fix summary and description
-
-* Wed Jul 30 2008 Thierry Vignaud <tv@mandriva.org> 1.09-3mdv2009.0
-+ Revision: 255988
-- rebuild
-
-* Tue Jan 15 2008 Guillaume Rousse <guillomovitch@mandriva.org> 1.09-1mdv2008.1
-+ Revision: 152962
-- update to new version 1.09
-- update to new version 1.09
-
-  + Olivier Blin <oblin@mandriva.com>
-    - restore BuildRoot
-
-  + Thierry Vignaud <tv@mandriva.org>
-    - kill re-definition of %%buildroot on Pixel's request
-
-* Tue Nov 06 2007 Guillaume Rousse <guillomovitch@mandriva.org> 1.08-1mdv2008.1
-+ Revision: 106602
-- import perl-Class-InsideOut
-
 

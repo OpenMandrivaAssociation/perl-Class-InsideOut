@@ -7,7 +7,7 @@ Release:    3
 License:    GPL or Artistic
 Group:      Development/Perl
 Summary:    A safe, simple inside-out object construction kit
-Url:        http://search.cpan.org/dist/%{upstream_name}
+Url:        https://search.cpan.org/dist/%{upstream_name}
 Source0:    http://www.cpan.org/modules/by-module/Config/%{upstream_name}-%{upstream_version}.tar.gz
 
 BuildRequires: perl(Carp)

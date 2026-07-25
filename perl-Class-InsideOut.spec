@@ -1,14 +1,14 @@
 %define upstream_name       Class-InsideOut
-%define upstream_version 1.13
+%define upstream_version 1.14
 
 Name:       perl-%{upstream_name}
-Version:    %perl_convert_version %{upstream_version}
-Release:    3
+Version:    %{upstream_version}
+Release:    1
 License:    GPL or Artistic
 Group:      Development/Perl
 Summary:    A safe, simple inside-out object construction kit
-Url:        https://search.cpan.org/dist/%{upstream_name}
-Source0:    http://www.cpan.org/modules/by-module/Config/%{upstream_name}-%{upstream_version}.tar.gz
+Url:        https://github.com/dagolden/class-insideout
+Source0:    https://cpan.metacpan.org/authors/id/D/DA/DAGOLDEN/Class-InsideOut-%{upstream_version}.tar.gz
 
 BuildRequires:	make
 BuildRequires: perl(Carp)
